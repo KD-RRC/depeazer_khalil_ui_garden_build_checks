@@ -6,7 +6,10 @@ import TableRow from '../TableRow/TableRow';
 import TableCell from '../TableCell/TableCell';
 import TableFooter from '../TableFooter/TableFooter';
 
-const StyledTable = styled.table<{ $backgroundColor: string; disabled?: boolean }>`
+const StyledTable = styled.table<{
+  $backgroundColor: string;
+  disabled?: boolean;
+}>`
   width: 100%;
   border-collapse: collapse;
   background-color: ${(props) => (props.disabled ? '#eeeeee' : props.$backgroundColor)};
@@ -21,37 +24,54 @@ const StyledTable = styled.table<{ $backgroundColor: string; disabled?: boolean 
 `;
 
 const Table: React.FC<TableProps> = ({
-    headers,
-    rows,
-    footer,
-    backgroundColor = '#ffffff',
-    disabled = false,
+  headers,
+  rows,
+  footer,
+  backgroundColor = '#ffffff',
+  disabled = false,
 }) => {
-    return (
-        <StyledTable $backgroundColor={backgroundColor} disabled={disabled}>
-            <TableHeader backgroundColor={backgroundColor} disabled={disabled}>
-                {headers.map((headerText, index) => (
-                    <TableCell key={`header-${index}`} content={headerText} isHeader disabled={disabled} />
-                ))}
-            </TableHeader>
-            <tbody>
-                {rows.map((row, rowIndex) => (
-                    <TableRow key={`row-${rowIndex}`} backgroundColor={backgroundColor} disabled={disabled}>
-                        {row.map((cellText, cellIndex) => (
-                            <TableCell key={`cell-${rowIndex}-${cellIndex}`} content={cellText} disabled={disabled} />
-                        ))}
-                    </TableRow>
-                ))}
-            </tbody>
-            {footer && (
-                <TableFooter backgroundColor={backgroundColor} disabled={disabled}>
-                    {footer.map((footerText, index) => (
-                        <TableCell key={`footer-${index}`} content={footerText} disabled={disabled} />
-                    ))}
-                </TableFooter>
-            )}
-        </StyledTable>
-    );
+  return (
+    <StyledTable $backgroundColor={backgroundColor} disabled={disabled}>
+      <TableHeader backgroundColor={backgroundColor} disabled={disabled}>
+        {headers.map((headerText, index) => (
+          <TableCell
+            key={`header-${index}`}
+            content={headerText}
+            isHeader
+            disabled={disabled}
+          />
+        ))}
+      </TableHeader>
+      <tbody>
+        {rows.map((row, rowIndex) => (
+          <TableRow
+            key={`row-${rowIndex}`}
+            backgroundColor={backgroundColor}
+            disabled={disabled}
+          >
+            {row.map((cellText, cellIndex) => (
+              <TableCell
+                key={`cell-${rowIndex}-${cellIndex}`}
+                content={cellText}
+                disabled={disabled}
+              />
+            ))}
+          </TableRow>
+        ))}
+      </tbody>
+      {footer && (
+        <TableFooter backgroundColor={backgroundColor} disabled={disabled}>
+          {footer.map((footerText, index) => (
+            <TableCell
+              key={`footer-${index}`}
+              content={footerText}
+              disabled={disabled}
+            />
+          ))}
+        </TableFooter>
+      )}
+    </StyledTable>
+  );
 };
 
 export default Table;

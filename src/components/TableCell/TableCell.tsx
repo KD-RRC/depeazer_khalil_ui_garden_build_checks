@@ -31,23 +31,23 @@ const StyledTh = styled.th<{ $backgroundColor: string; disabled?: boolean }>`
 `;
 
 const TableCell: React.FC<TableCellProps> = ({
-    content,
-    isHeader = false,
-    backgroundColor = '#ffffff',
-    disabled = false,
+  content,
+  isHeader = false,
+  backgroundColor = '#ffffff',
+  disabled = false,
 }) => {
-    if (isHeader) {
-        return (
-            <StyledTh $backgroundColor={backgroundColor} disabled={disabled}>
-                {content}
-            </StyledTh>
-        );
-    }
+  if (isHeader) {
     return (
-        <StyledTd $backgroundColor={backgroundColor} disabled={disabled}>
-            {content}
-        </StyledTd>
+      <StyledTh $backgroundColor={backgroundColor} disabled={disabled}>
+        {content}
+      </StyledTh>
     );
+  }
+  return (
+    <StyledTd $backgroundColor={backgroundColor} disabled={disabled}>
+      {content}
+    </StyledTd>
+  );
 };
 
 export default TableCell;

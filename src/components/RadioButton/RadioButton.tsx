@@ -19,27 +19,27 @@ const Wrapper = styled.label<{ $backgroundColor: string; disabled?: boolean }>`
 `;
 
 const RadioButton: React.FC<RadioButtonProps> = ({
-    label,
-    name,
-    value,
-    checked = false,
-    disabled = false,
-    backgroundColor = '#f5f5f5',
-    onChange,
+  label,
+  name,
+  value,
+  checked = false,
+  disabled = false,
+  backgroundColor = '#f5f5f5',
+  onChange,
 }) => {
-    return (
-        <Wrapper $backgroundColor={backgroundColor} disabled={disabled}>
-            <input
-                type="radio"
-                name={name}
-                value={value}
-                checked={checked}
-                disabled={disabled}
-                onChange={() => onChange && onChange(value)}
-            />
-            {label}
-        </Wrapper>
-    );
+  return (
+    <Wrapper $backgroundColor={backgroundColor} disabled={disabled}>
+      <input
+        type="radio"
+        name={name}
+        value={value}
+        checked={checked}
+        disabled={disabled}
+        onChange={() => onChange && onChange(value)}
+      />
+      {label}
+    </Wrapper>
+  );
 };
 
 export default RadioButton;

@@ -3,9 +3,9 @@ import styled from 'styled-components';
 import { DropdownProps } from './Dropdown.types';
 
 const StyledSelect = styled.select<{
-    $backgroundColor: string;
-    $textColor: string;
-    disabled?: boolean;
+  $backgroundColor: string;
+  $textColor: string;
+  disabled?: boolean;
 }>`
   background-color: ${(props) => (props.disabled ? '#eeeeee' : props.$backgroundColor)};
   color: ${(props) => (props.disabled ? '#999999' : props.$textColor)};
@@ -24,28 +24,28 @@ const StyledSelect = styled.select<{
 `;
 
 const Dropdown: React.FC<DropdownProps> = ({
-    options,
-    value,
-    backgroundColor = '#ffffff',
-    textColor = '#222222',
-    disabled = false,
-    onChange,
+  options,
+  value,
+  backgroundColor = '#ffffff',
+  textColor = '#222222',
+  disabled = false,
+  onChange,
 }) => {
-    return (
-        <StyledSelect
-            $backgroundColor={backgroundColor}
-            $textColor={textColor}
-            disabled={disabled}
-            value={value}
-            onChange={(e) => onChange && onChange(e.target.value)}
-        >
-            {options.map((option) => (
-                <option key={option.value} value={option.value}>
-                    {option.label}
-                </option>
-            ))}
-        </StyledSelect>
-    );
+  return (
+    <StyledSelect
+      $backgroundColor={backgroundColor}
+      $textColor={textColor}
+      disabled={disabled}
+      value={value}
+      onChange={(e) => onChange && onChange(e.target.value)}
+    >
+      {options.map((option) => (
+        <option key={option.value} value={option.value}>
+          {option.label}
+        </option>
+      ))}
+    </StyledSelect>
+  );
 };
 
 export default Dropdown;

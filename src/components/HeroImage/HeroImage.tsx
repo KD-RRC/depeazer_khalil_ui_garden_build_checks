@@ -56,20 +56,22 @@ const Subheading = styled.p<{ $textColor: string }>`
 `;
 
 const HeroImage: React.FC<HeroImageProps> = ({
-    imageUrl,
-    heading,
-    subheading,
-    textColor = '#ffffff',
-    disabled = false,
+  imageUrl,
+  heading,
+  subheading,
+  textColor = '#ffffff',
+  disabled = false,
 }) => {
-    return (
-        <HeroWrapper $imageUrl={imageUrl} disabled={disabled}>
-            <Overlay>
-                <Heading $textColor={textColor}>{heading}</Heading>
-                {subheading && <Subheading $textColor={textColor}>{subheading}</Subheading>}
-            </Overlay>
-        </HeroWrapper>
-    );
+  return (
+    <HeroWrapper $imageUrl={imageUrl} disabled={disabled}>
+      <Overlay>
+        <Heading $textColor={textColor}>{heading}</Heading>
+        {subheading && (
+          <Subheading $textColor={textColor}>{subheading}</Subheading>
+        )}
+      </Overlay>
+    </HeroWrapper>
+  );
 };
 
 export default HeroImage;

@@ -17,8 +17,13 @@ const StyledImg = styled.img<{ $width: string; disabled?: boolean }>`
   }
 `;
 
-const Img: React.FC<ImgProps> = ({ src, alt, width = '300px', disabled = false }) => {
-    return <StyledImg src={src} alt={alt} $width={width} disabled={disabled} />;
+const Img: React.FC<ImgProps> = ({
+  src,
+  alt,
+  width = '300px',
+  disabled = false,
+}) => {
+  return <StyledImg src={src} alt={alt} $width={width} disabled={disabled} />;
 };
 
 export default Img;

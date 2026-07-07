@@ -66,7 +66,11 @@ function App() {
       <SectionTitle>Images</SectionTitle>
       <Row>
         <Img src="https://picsum.photos/200/150" alt="Sample landscape" />
-        <Img src="https://picsum.photos/200/150?grayscale" alt="Disabled sample" disabled />
+        <Img
+          src="https://picsum.photos/200/150?grayscale"
+          alt="Disabled sample"
+          disabled
+        />
       </Row>
 
       <SectionTitle>Card</SectionTitle>

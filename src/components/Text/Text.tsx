@@ -3,10 +3,10 @@ import styled from 'styled-components';
 import { TextProps } from './Text.types';
 
 const StyledText = styled.p<{
-    $textColor: string;
-    $backgroundColor: string;
-    $fontSize: number;
-    disabled?: boolean;
+  $textColor: string;
+  $backgroundColor: string;
+  $fontSize: number;
+  disabled?: boolean;
 }>`
   color: ${(props) => (props.disabled ? '#999999' : props.$textColor)};
   background-color: ${(props) => props.$backgroundColor};
@@ -23,22 +23,22 @@ const StyledText = styled.p<{
 `;
 
 const Text: React.FC<TextProps> = ({
-    content,
-    textColor = '#222222',
-    backgroundColor = 'transparent',
-    fontSize = 16,
-    disabled = false,
+  content,
+  textColor = '#222222',
+  backgroundColor = 'transparent',
+  fontSize = 16,
+  disabled = false,
 }) => {
-    return (
-        <StyledText
-            $textColor={textColor}
-            $backgroundColor={backgroundColor}
-            $fontSize={fontSize}
-            disabled={disabled}
-        >
-            {content}
-        </StyledText>
-    );
+  return (
+    <StyledText
+      $textColor={textColor}
+      $backgroundColor={backgroundColor}
+      $fontSize={fontSize}
+      disabled={disabled}
+    >
+      {content}
+    </StyledText>
+  );
 };
 
 export default Text;

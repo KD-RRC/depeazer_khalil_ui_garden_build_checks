@@ -38,19 +38,19 @@ const CardDescription = styled.p`
 `;
 
 const Card: React.FC<CardProps> = ({
-    title,
-    description,
-    imageUrl,
-    backgroundColor = '#ffffff',
-    disabled = false,
+  title,
+  description,
+  imageUrl,
+  backgroundColor = '#ffffff',
+  disabled = false,
 }) => {
-    return (
-        <StyledCard $backgroundColor={backgroundColor} disabled={disabled}>
-            {imageUrl && <CardImage src={imageUrl} alt={title} />}
-            <CardTitle>{title}</CardTitle>
-            <CardDescription>{description}</CardDescription>
-        </StyledCard>
-    );
+  return (
+    <StyledCard $backgroundColor={backgroundColor} disabled={disabled}>
+      {imageUrl && <CardImage src={imageUrl} alt={title} />}
+      <CardTitle>{title}</CardTitle>
+      <CardDescription>{description}</CardDescription>
+    </StyledCard>
+  );
 };
 
 export default Card;

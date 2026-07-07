@@ -3,12 +3,12 @@ import styled from 'styled-components';
 import { ButtonProps } from './Button.types';
 
 const StyledButton = styled.button<{
-    $backgroundColor: string;
-    $textColor: string;
-    disabled?: boolean;
+  $backgroundColor: string;
+  $textColor: string;
+  disabled?: boolean;
 }>`
   background-color: ${(props) =>
-        props.disabled ? '#cccccc' : props.$backgroundColor};
+    props.disabled ? '#cccccc' : props.$backgroundColor};
   color: ${(props) => (props.disabled ? '#888888' : props.$textColor)};
   border: none;
   border-radius: 6px;
@@ -17,7 +17,9 @@ const StyledButton = styled.button<{
   font-weight: 600;
   cursor: ${(props) => (props.disabled ? 'not-allowed' : 'pointer')};
   opacity: ${(props) => (props.disabled ? 0.6 : 1)};
-  transition: background-color 0.2s ease, opacity 0.2s ease;
+  transition:
+    background-color 0.2s ease,
+    opacity 0.2s ease;
   width: 100%;
   max-width: 240px;
 
@@ -32,22 +34,22 @@ const StyledButton = styled.button<{
 `;
 
 const Button: React.FC<ButtonProps> = ({
-    label,
-    backgroundColor = '#3366ff',
-    textColor = '#ffffff',
-    disabled = false,
-    onClick,
+  label,
+  backgroundColor = '#3366ff',
+  textColor = '#ffffff',
+  disabled = false,
+  onClick,
 }) => {
-    return (
-        <StyledButton
-            $backgroundColor={backgroundColor}
-            $textColor={textColor}
-            disabled={disabled}
-            onClick={disabled ? undefined : onClick}
-        >
-            {label}
-        </StyledButton>
-    );
+  return (
+    <StyledButton
+      $backgroundColor={backgroundColor}
+      $textColor={textColor}
+      disabled={disabled}
+      onClick={disabled ? undefined : onClick}
+    >
+      {label}
+    </StyledButton>
+  );
 };
 
 export default Button;

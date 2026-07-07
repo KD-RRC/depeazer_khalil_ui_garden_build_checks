@@ -12,15 +12,15 @@ const StyledTr = styled.tr<{ $backgroundColor: string; disabled?: boolean }>`
 `;
 
 const TableRow: React.FC<TableRowProps> = ({
-    children,
-    backgroundColor = '#ffffff',
-    disabled = false,
+  children,
+  backgroundColor = '#ffffff',
+  disabled = false,
 }) => {
-    return (
-        <StyledTr $backgroundColor={backgroundColor} disabled={disabled}>
-            {children}
-        </StyledTr>
-    );
+  return (
+    <StyledTr $backgroundColor={backgroundColor} disabled={disabled}>
+      {children}
+    </StyledTr>
+  );
 };
 
 export default TableRow;
