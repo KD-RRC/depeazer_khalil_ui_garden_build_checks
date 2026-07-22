@@ -7,10 +7,20 @@ via Prettier, ESLint, Husky pre-commit hooks, and GitHub Actions CI/CD.
 
 - **Prettier** — enforces consistent code formatting across all source files
 - **ESLint** — enforces code quality rules for TypeScript and React
-- **Husky** — runs pre-commit hooks that block commits if Prettier, ESLint, or
-  tests fail
-- **GitHub Actions** — CI pipeline that runs the same checks on every push to
-  GitHub, catching anything that bypassed Husky locally
+- **Husky** — runs pre-commit hooks that block commits if Prettier, ESLint, or tests fail
+- **GitHub Actions** — CI pipeline that runs the same checks on every push to GitHub
+
+## Tool Overview
+
+| Tool | Purpose |
+--------------------
+
+| Prettier | Checks consistent code formatting |
+| ESLint | Detects code quality and rule violations |
+| Tests | Verify component rendering and behaviour |
+| Husky | Runs quality checks before a local commit |
+| GitHub Actions | Repeats checks on pushes and pull requests |
+| Docker | Builds and serves the production app consistently |
 
 ## Pre-commit hook behaviour
 
