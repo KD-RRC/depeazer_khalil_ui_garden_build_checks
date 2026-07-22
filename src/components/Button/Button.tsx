@@ -35,7 +35,7 @@ const StyledButton = styled.button<{
 
 const Button: React.FC<ButtonProps> = ({
   label,
-  backgroundColor = '#000000',
+  backgroundColor = "#3366ff",
   textColor = '#ffffff',
   disabled = false,
   onClick,
